@@ -1,9 +1,17 @@
 package css.project1wilsonkrueger;
 
-public class Cow {
+import java.io.Serializable;
+
+public class Cow implements Serializable {
     private String id;
     private String dateOfBirth;
     private String gender;
+
+    public Cow() {
+        id = "";
+        dateOfBirth = "";
+        gender = "";
+    }
 
     public Cow(String inId, String inDateOfBirth, String inGender) {
         id = inId;

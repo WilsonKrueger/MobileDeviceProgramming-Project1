@@ -12,17 +12,25 @@ public class MainViewModel extends AndroidViewModel {
         super(application);
         cowRepository = new CowRepository();
     }
-
+/*
     public void insert(String id, String dob, String gender) {
         Cow cow = new Cow(id, dob, gender);
         cowRepository.insert(cow);
     }
-
+*/
     public Integer getNumberCows() {
         return cowRepository.getNumberCows();
     }
 
     public Cow getCow(Integer position) {
         return cowRepository.getCow(position);
+    }
+
+    public void clearList() {
+        cowRepository = new CowRepository();
+    }
+
+    public void addCow(Cow cow) {
+        cowRepository.insert(cow);
     }
 }
