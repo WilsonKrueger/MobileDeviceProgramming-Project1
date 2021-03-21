@@ -12,13 +12,23 @@ import androidx.lifecycle.ViewModelProvider;
 import java.text.DateFormat;
 import java.util.Calendar;
 
+/**
+ * Class for a calendar fragment
+ *
+ * @author Wilson Krueger
+ */
 public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
     String dob;
     MainViewModel mainViewModel;
 
-
+    /**
+     * Method to create the DatePickerFragment
+     *
+     * @param savedInstanceState
+     * @return a date picker dialog
+     */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
@@ -33,6 +43,14 @@ public class DatePickerFragment extends DialogFragment
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
+    /**
+     * Method for after the date is selected from the fragment
+     *
+     * @param view DatePicker view
+     * @param year selected
+     * @param month selected
+     * @param day selected
+     */
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
         //Month is from 0 to 11 so need to increment once
@@ -44,6 +62,4 @@ public class DatePickerFragment extends DialogFragment
         //Set the date in the mainViewModel
         mainViewModel.setDateOfBirth(dob);
     }
-
-
 }

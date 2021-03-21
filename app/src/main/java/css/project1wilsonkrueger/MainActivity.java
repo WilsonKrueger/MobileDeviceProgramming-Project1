@@ -25,6 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.util.Calendar;
 
+/**
+ * Class for running the main activity to operate the cow tracker application
+ *
+ * @author Wilson Krueger
+ */
 public class MainActivity extends AppCompatActivity{
 
     //Layout components

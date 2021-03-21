@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Project1WilsonKrueger</string>
+    <string name="App_Title">Cow Tracker</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="unknown">Unknown</string>
+    <string name="id">Id:</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="insert_cow">Insert Cow</string>
+    <string name="id_number">Id #</string>
+    <string name="cow_id">Cow Id:</string>
+    <string name="textview_id">TextView</string>
+    <string name="date_of_birth_cow_row">Date of Birth:</string>
+    <string name="gender">Gender:</string>
+    <string name="textview_dob">TextView</string>
+    <string name="textview_gender">TextView</string>
 </resources>

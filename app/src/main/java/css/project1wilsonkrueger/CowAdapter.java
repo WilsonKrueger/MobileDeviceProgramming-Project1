@@ -8,16 +8,34 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * Class for adapting the recycler view
+ *
+ * @author Wilson Krueger
+ */
 public class CowAdapter extends RecyclerView.Adapter<CowViewHolder>{
     Application application;
     MainViewModel mainViewModel;
 
+    /**
+     * Constructor - create an object of this class
+     *
+     * @param application takes in the application
+     * @param mainViewModel takes in access to the main view model
+     */
     public CowAdapter(Application application, MainViewModel mainViewModel)
     {
         this.application = application;
         this.mainViewModel = mainViewModel;
     }
 
+    /**
+     * Method for inflating the layout
+     *
+     * @param parent
+     * @param viewType
+     * @return new instance of the view holder
+     */
     @NonNull
     @Override
     public CowViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,6 +45,12 @@ public class CowAdapter extends RecyclerView.Adapter<CowViewHolder>{
         return new CowViewHolder(view);
     }
 
+    /**
+     * Method to bind the layout with the current cow
+     *
+     * @param holder current CowViewHolder
+     * @param position in the recycler view
+     */
     @Override
     public void onBindViewHolder(@NonNull CowViewHolder holder, int position) {
         Cow currentCow = mainViewModel.getCow(position);
@@ -35,6 +59,11 @@ public class CowAdapter extends RecyclerView.Adapter<CowViewHolder>{
         holder.textViewGender.setText(currentCow.getGender());
     }
 
+    /**
+     * Method for get the number of items in the recycler view
+     *
+     * @return number of cow objects from the mainViewModel
+     */
     @Override
     public int getItemCount() {
         return mainViewModel.getNumberCows();
