@@ -14,4 +14,13 @@
     <string name="gender">Gender:</string>
     <string name="textview_dob">TextView</string>
     <string name="textview_gender">TextView</string>
+    <string name="button_second">View</string>
+    <string name="textviewIdSecond">TextView</string>
+    <string name="cow_details">Cow Details</string>
+    <string name="textviewDobSecond">TextView</string>
+    <string name="idSecond">Id:</string>
+    <string name="date_of_birthSecond">Date of Birth:</string>
+    <string name="genderSecond">Gender:</string>
+    <string name="textviewGenderSecond">TextView</string>
+    <string name="return_to_main">Return to Main</string>
 </resources>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity{
     FirebaseDatabase database;
     DatabaseReference myDatabase;
 
+    /**
+     * Method for creating an instance of the Main Activity
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +81,9 @@ public class MainActivity extends AppCompatActivity{
         setupFirebaseUpdates();
     }
 
-    //Method for Firebase updates
+    /**
+     * Method for Firebase updates
+     */
     private void setupFirebaseUpdates() {
         // Read from the database
         myDatabase.addValueEventListener(new ValueEventListener() {
@@ -100,7 +108,9 @@ public class MainActivity extends AppCompatActivity{
         });
     }
 
-    //Method for instantiating the buttonInsert
+    /**
+     * Method for instantiating the buttonInsert
+     */
     private void setupButtonInsert() {
         buttonInsert = findViewById(R.id.buttonInsert);
         buttonInsert.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +143,9 @@ public class MainActivity extends AppCompatActivity{
         });
     }
 
-    //Method for instantiating the recyclerView
+    /**
+     * Method for instantiating the recyclerView
+     */
     private void setupRecyclerViewer() {
         cowAdapter = new CowAdapter(this.getApplication(), mainViewModel);
         recyclerViewCow = findViewById(R.id.recyclerViewCow);
@@ -141,7 +153,9 @@ public class MainActivity extends AppCompatActivity{
         recyclerViewCow.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    //Method for instantiating the buttonCalendar
+    /**
+     * Method for instantiating the buttonCalendar
+     */
     private void setupButtonCalendar() {
         buttonCalendar = findViewById(R.id.buttonCalendar);
         buttonCalendar.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +166,9 @@ public class MainActivity extends AppCompatActivity{
         });
     }
 
-    //Method for showing new fragment with calendar
+    /**
+     * Method for showing new fragment with calendar
+     */
     public void showDatePickerDialog() {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
